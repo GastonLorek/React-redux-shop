@@ -1,0 +1,35 @@
+.header{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: aqua;
+    height: 63px;
+    box-shadow: 0 3px 3px -2px rgba(0, 0, 0,.2);
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.header__cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+}
+.header__cart > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+    border-radius: 100px;
+    height: 14px;
+    width: 14px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+
+}
+.MuiSvgIcon-root{
+    cursor: pointer;
+}

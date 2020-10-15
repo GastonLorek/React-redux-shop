@@ -1,0 +1,26 @@
+.shoppingcart{
+    position: absolute;
+    width: 500px;
+    right: -500;
+    height: 93.3vh;
+    background-color: rgb(170, 70, 70);
+    transition: 0.7s ease-out;
+}
+
+
+.shoppingcart__show{
+    position: absolute;
+    width: 500px;
+    right: 0;
+    height: 93.3vh;
+    background-color: rgb(170, 70, 70);
+    transition: 0.7s ease-out;
+}
+.shoppingcart__hide {
+    position: absolute;
+    right: -500px;
+    width: 500px;
+    height: 93.3vh;
+    background-color: rgb(170, 70, 70);
+    transition: 0.7s ease-out;
+}
