@@ -1,22 +1,33 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import { Switch, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
-import './App.css';
 import ShoppingCart from './components/ShoppingCart/ShoppingCart';
 import ProductsList from './components/ProductsList/ProductsList';
+import ProductPage from './components/ProductPage/ProductPage';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div>
-      <Header handleShoppingCart={() => setIsOpen(!isOpen)} />
-      <ProductsList />
-      <ShoppingCart
-        isOpen={isOpen}
-        handleShoppingCart={() => setIsOpen(!isOpen)}
-      />
-      {/* Footer */}
+      <Switch>
+        <Route exact path="/">
+          <Header handleShoppingCart={() => setIsOpen(!isOpen)} />
+          <ShoppingCart
+            isOpen={isOpen}
+            handleShoppingCart={() => setIsOpen(!isOpen)}
+          />
+          <ProductsList />
+        </Route>
+        <Route exact path="/product">
+          <Header handleShoppingCart={() => setIsOpen(!isOpen)} />
+          <ShoppingCart
+            isOpen={isOpen}
+            handleShoppingCart={() => setIsOpen(!isOpen)}
+          />
+          <ProductPage />
+        </Route>
+      </Switch>
     </div>
   );
 }

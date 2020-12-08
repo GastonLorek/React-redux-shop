@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { useHistory } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -28,13 +30,18 @@ const useStyles = makeStyles({
   }
 });
 
-const Header = () => {
+const Header = ({ handleShoppingCart }) => {
   const classes = useStyles();
+  const history = useHistory();
   return (
     <div className={classes.root}>
       <AppBar position="relative" className={classes.bar}>
         <Toolbar className={classes.inside}>
-          <Typography variant="h5" className={classes.title}>
+          <Typography
+            variant="h5"
+            className={classes.title}
+            onClick={() => history.push('/')}
+          >
             React Shoes Store
           </Typography>
           <IconButton
@@ -42,6 +49,7 @@ const Header = () => {
             className={classes.menuButton}
             color="inherit"
             aria-label="menu"
+            onClick={handleShoppingCart}
           >
             <ShoppingCartSharpIcon />
           </IconButton>
@@ -53,10 +61,6 @@ const Header = () => {
 
 export default Header;
 
-// <div className="header">
-//   <span>Logo</span>
-//   <div className="header__cart">
-//     <ShoppingCartSharpIcon onClick={handleShoppingCart} />
-//     <span>0</span>
-//   </div>
-// </div>
+Header.propTypes = {
+  handleShoppingCart: PropTypes.func
+};

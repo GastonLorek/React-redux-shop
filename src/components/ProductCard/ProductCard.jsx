@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -21,6 +22,7 @@ const useStyles = makeStyles({
 
 const ProductCard = ({ product }) => {
   const classes = useStyles();
+  const history = useHistory();
 
   const { name, image, price, category } = product;
   console.log(product);
@@ -29,7 +31,13 @@ const ProductCard = ({ product }) => {
       {!product ? (
         <CircularProgress />
       ) : (
-        <Grid item xs={12} sm={4} lg={3}>
+        <Grid
+          item
+          xs={12}
+          sm={4}
+          lg={3}
+          onClick={() => history.push('/product')}
+        >
           <Card className={classes.root}>
             <CardActionArea>
               <CardMedia
