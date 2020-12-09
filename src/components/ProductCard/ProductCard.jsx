@@ -23,9 +23,7 @@ const useStyles = makeStyles({
 const ProductCard = ({ product }) => {
   const classes = useStyles();
   const history = useHistory();
-
-  const { name, image, price, category } = product;
-  console.log(product);
+  const { name, image, price, category, id } = product;
   return (
     <>
       {!product ? (
@@ -36,7 +34,7 @@ const ProductCard = ({ product }) => {
           xs={12}
           sm={4}
           lg={3}
-          onClick={() => history.push('/product')}
+          onClick={() => history.push(`/product/${id}`)}
         >
           <Card className={classes.root}>
             <CardActionArea>

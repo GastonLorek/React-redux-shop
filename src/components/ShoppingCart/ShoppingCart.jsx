@@ -1,4 +1,6 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { toogleCart } from '../../store/actions/index';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
@@ -36,7 +38,9 @@ const useStyles = makeStyles({
     display: 'inline'
   }
 });
-const ShoppingCart = ({ isOpen, handleShoppingCart }) => {
+const ShoppingCart = () => {
+  const dispatch = useDispatch();
+  const isOpen = useSelector(state => state.shoppingCart.isOpen);
   const classes = useStyles();
 
   const list = () => (
@@ -71,11 +75,44 @@ const ShoppingCart = ({ isOpen, handleShoppingCart }) => {
           </IconButton>
         </ListItem>
         <Divider />
+        <ListItem className={classes.listItem}>
+          <Avatar
+            className={classes.avatar}
+            src={imagen}
+            variant="square"
+          ></Avatar>
+          <ListItemText
+            primary={
+              <>
+                <Typography variant="h5">{'Nike Sb'}</Typography>
+              </>
+            }
+            secondary={
+              <>
+                <Typography
+                  component="strong"
+                  variant="body1"
+                  className={classes.inline}
+                >
+                  {'$ 7000'}
+                </Typography>
+              </>
+            }
+          />
+          <IconButton aria-label="delete">
+            <DeleteIcon fontSize="small" />
+          </IconButton>
+        </ListItem>
+        <Divider />
       </List>
     </div>
   );
   return (
-    <Drawer anchor="right" open={isOpen} onClose={handleShoppingCart}>
+    <Drawer
+      anchor="right"
+      open={isOpen}
+      onClose={() => dispatch(toogleCart({ isOpen }))}
+    >
       {list()}
       <Button className={classes.button}>Buy</Button>
     </Drawer>
