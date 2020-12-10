@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { makeStyles } from '@material-ui/core/styles';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart } from '../../store/actions/index';
+import { useStyles } from './style';
 import Grid from '@material-ui/core/Grid';
 import {
   Button,
@@ -13,55 +14,17 @@ import {
   Typography
 } from '@material-ui/core';
 import AddShoppingCartTwoToneIcon from '@material-ui/icons/AddShoppingCartTwoTone';
-import { green, grey } from '@material-ui/core/colors';
-
-const useStyles = makeStyles({
-  root: {
-    flexGrow: 1
-  },
-  card: {
-    maxWidth: 500
-  },
-  produtctCard: {
-    padding: 20,
-    marginTop: 20
-  },
-  media: {
-    height: 464,
-    objectFit: 'contain'
-  },
-  miniCard: {
-    flexGrow: 1,
-    maxWidth: 110,
-    marginBottom: 10
-  },
-  miniMedia: {
-    height: 108.5,
-    objectFit: 'contain',
-    cursor: 'pointer'
-  },
-  button: {
-    color: green['A200'],
-    background: grey[900],
-    marginBottom: 20,
-    marginTop: 20,
-    '&:hover': {
-      color: grey[900],
-      background: green['A200']
-    }
-  },
-  description: {
-    marginTop: 20,
-    marginBottom: 20
-  }
-});
 
 const ProductPage = () => {
   const [index, setIndex] = useState(0);
-  const product = useSelector(state => state.products);
+  const {
+    products,
+    shoppingCart: { isOpen }
+  } = useSelector(state => state);
+  const dispatch = useDispatch();
   const classes = useStyles();
   const { id } = useParams();
-  const matchProduct = () => product.find(item => item.id === parseInt(id));
+  const matchProduct = () => products.find(item => item.id === parseInt(id));
 
   const { name, description, images, price } = matchProduct();
   return (
@@ -141,6 +104,9 @@ const ProductPage = () => {
                 className={classes.button}
                 size="large"
                 startIcon={<AddShoppingCartTwoToneIcon />}
+                onClick={() =>
+                  dispatch(addToCart({ ...matchProduct(), isOpen }))
+                }
               >
                 Add To Cart
               </Button>

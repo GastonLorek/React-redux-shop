@@ -10,14 +10,15 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import { grey, green } from '@material-ui/core/colors';
-import { Avatar, Typography } from '@material-ui/core';
+import { AppBar, Avatar, Paper, Toolbar, Typography } from '@material-ui/core';
+import ShoppingCartSharpIcon from '@material-ui/icons/ShoppingCartSharp';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
-import imagen from '../../images/Busenitz_Vulc_II_Shoes_Black_EF8472_01_standard.jpg';
 
 const useStyles = makeStyles({
   list: {
-    width: 500
+    width: 500,
+    flexGrow: 1
   },
   listItem: {
     flex: 1
@@ -26,8 +27,14 @@ const useStyles = makeStyles({
     width: 'auto'
   },
   button: {
+    height: 40,
     background: grey[900],
-    color: green['A200']
+    color: green['A200'],
+    borderRadius: 0,
+    '&:hover': {
+      background: green['A200'],
+      color: grey[900]
+    }
   },
   avatar: {
     width: 100,
@@ -36,26 +43,33 @@ const useStyles = makeStyles({
   },
   inline: {
     display: 'inline'
+  },
+  appBar: {
+    height: 60,
+    border: 'none'
+  },
+  cartIcon: {
+    color: green['A200'],
+    marginRight: 10
   }
 });
 const ShoppingCart = () => {
   const dispatch = useDispatch();
-  const isOpen = useSelector(state => state.shoppingCart.isOpen);
+  const { isOpen, shoppingCart } = useSelector(state => state.shoppingCart);
   const classes = useStyles();
-
-  const list = () => (
-    <div className={classes.list} role="presentation">
-      <List>
-        <ListItem className={classes.listItem}>
+  const renderProduct = () =>
+    shoppingCart.map((product, idx) => (
+      <>
+        <ListItem className={classes.listItem} key={idx}>
           <Avatar
             className={classes.avatar}
-            src={imagen}
+            src={product.image}
             variant="square"
           ></Avatar>
           <ListItemText
             primary={
               <>
-                <Typography variant="h5">{'Nike Sb'}</Typography>
+                <Typography variant="h5">{product.name}</Typography>
               </>
             }
             secondary={
@@ -65,7 +79,7 @@ const ShoppingCart = () => {
                   variant="body1"
                   className={classes.inline}
                 >
-                  {'$ 7000'}
+                  {product.price}
                 </Typography>
               </>
             }
@@ -74,47 +88,41 @@ const ShoppingCart = () => {
             <DeleteIcon fontSize="small" />
           </IconButton>
         </ListItem>
-        <Divider />
-        <ListItem className={classes.listItem}>
-          <Avatar
-            className={classes.avatar}
-            src={imagen}
-            variant="square"
-          ></Avatar>
-          <ListItemText
-            primary={
-              <>
-                <Typography variant="h5">{'Nike Sb'}</Typography>
-              </>
-            }
-            secondary={
-              <>
-                <Typography
-                  component="strong"
-                  variant="body1"
-                  className={classes.inline}
-                >
-                  {'$ 7000'}
-                </Typography>
-              </>
-            }
-          />
-          <IconButton aria-label="delete">
-            <DeleteIcon fontSize="small" />
-          </IconButton>
-        </ListItem>
-        <Divider />
-      </List>
-    </div>
-  );
+        <Divider variant="middle" />
+      </>
+    ));
   return (
     <Drawer
       anchor="right"
       open={isOpen}
       onClose={() => dispatch(toogleCart({ isOpen }))}
     >
-      {list()}
-      <Button className={classes.button}>Buy</Button>
+      <div className={classes.list} role="presentation">
+        <AppBar position="relative" color="#fff" className={classes.appBar}>
+          <Toolbar>
+            <ShoppingCartSharpIcon className={classes.cartIcon} />
+            <Typography variant="h6">Cart</Typography>
+          </Toolbar>
+        </AppBar>
+        <List>
+          {shoppingCart.length === 0 ? (
+            <ListItemText
+              primary={
+                <>
+                  <Typography variant="h5">
+                    {'Your Shopping Cart is Empty'}
+                  </Typography>
+                </>
+              }
+            />
+          ) : (
+            renderProduct()
+          )}
+        </List>
+      </div>
+      <Button className={classes.button} variant="contained">
+        Buy
+      </Button>
     </Drawer>
   );
 };

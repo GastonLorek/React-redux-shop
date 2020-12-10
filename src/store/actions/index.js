@@ -5,3 +5,9 @@ export const toogleCart = () => {
     type: actionTypes.TOOGLE_CART
   };
 };
+export const addToCart = item => {
+  return {
+    type: actionTypes.ADD_TO_CART,
+    item
+  };
+};
