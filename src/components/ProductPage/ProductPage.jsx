@@ -14,6 +14,7 @@ import {
   Typography
 } from '@material-ui/core';
 import AddShoppingCartTwoToneIcon from '@material-ui/icons/AddShoppingCartTwoTone';
+import Currency from '../Currency/Currency';
 
 const ProductPage = () => {
   const [index, setIndex] = useState(0);
@@ -84,7 +85,7 @@ const ProductPage = () => {
                       gutterBottom
                       paragraph
                     >
-                      $ {price}
+                      <Currency price={price} />
                     </Typography>
                   </>
                 }

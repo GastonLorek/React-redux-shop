@@ -30,6 +30,7 @@ export const useStyles = makeStyles({
     color: green['A200'],
     background: grey[900],
     marginBottom: 20,
+    textTransform: 'capitalize',
     marginTop: 20,
     '&:hover': {
       color: grey[900],

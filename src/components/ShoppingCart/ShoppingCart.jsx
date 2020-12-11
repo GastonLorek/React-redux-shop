@@ -1,58 +1,21 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { toogleCart } from '../../store/actions/index';
+import { toogleCart, removeFromCart } from '../../store/actions/index';
+import { getCartTotalAmount } from '../../store/reducers/shoppingCart';
 import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import { grey, green } from '@material-ui/core/colors';
-import { AppBar, Avatar, Paper, Toolbar, Typography } from '@material-ui/core';
+import { useStyles } from './style';
+import { AppBar, Avatar, Toolbar, Typography } from '@material-ui/core';
 import ShoppingCartSharpIcon from '@material-ui/icons/ShoppingCartSharp';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
+import Currency from '../Currency/Currency';
 
-const useStyles = makeStyles({
-  list: {
-    width: 500,
-    flexGrow: 1
-  },
-  listItem: {
-    flex: 1
-  },
-  fullList: {
-    width: 'auto'
-  },
-  button: {
-    height: 40,
-    background: grey[900],
-    color: green['A200'],
-    borderRadius: 0,
-    '&:hover': {
-      background: green['A200'],
-      color: grey[900]
-    }
-  },
-  avatar: {
-    width: 100,
-    height: 100,
-    marginRight: '10px'
-  },
-  inline: {
-    display: 'inline'
-  },
-  appBar: {
-    height: 60,
-    border: 'none'
-  },
-  cartIcon: {
-    color: green['A200'],
-    marginRight: 10
-  }
-});
 const ShoppingCart = () => {
   const dispatch = useDispatch();
   const { isOpen, shoppingCart } = useSelector(state => state.shoppingCart);
@@ -79,12 +42,19 @@ const ShoppingCart = () => {
                   variant="body1"
                   className={classes.inline}
                 >
-                  {product.price}
+                  <Currency price={product.price} />
+                  <strong style={{ marginLeft: '3px', marginRight: '3px' }}>
+                    x
+                  </strong>
+                  <strong>{product.quantity}</strong>
                 </Typography>
               </>
             }
           />
-          <IconButton aria-label="delete">
+          <IconButton
+            aria-label="delete"
+            onClick={() => dispatch(removeFromCart(product))}
+          >
             <DeleteIcon fontSize="small" />
           </IconButton>
         </ListItem>
@@ -121,7 +91,8 @@ const ShoppingCart = () => {
         </List>
       </div>
       <Button className={classes.button} variant="contained">
-        Buy
+        <strong>Checkout</strong>{' '}
+        <Currency price={getCartTotalAmount(shoppingCart)} />
       </Button>
     </Drawer>
   );

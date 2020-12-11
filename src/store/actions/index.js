@@ -11,3 +11,16 @@ export const addToCart = item => {
     item
   };
 };
+export const removeFromCart = item => {
+  return {
+    type: actionTypes.REMOVE_ITEM_FROM_CART,
+    item
+  };
+};
+export const handleQuantity = (item, operator) => {
+  return {
+    type: actionTypes.ADD_ONE,
+    item,
+    operator
+  };
+};
