@@ -17,10 +17,9 @@ export const removeFromCart = item => {
     item
   };
 };
-export const handleQuantity = (item, operator) => {
+export const handleQuantity = operator => {
   return {
-    type: actionTypes.ADD_ONE,
-    item,
+    type: actionTypes.HANDLE_QUANTITY,
     operator
   };
 };

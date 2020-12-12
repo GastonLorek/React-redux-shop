@@ -21,6 +21,12 @@ export const useStyles = makeStyles({
     maxWidth: 110,
     marginBottom: 10
   },
+  miniCardactive: {
+    border: `1px solid ${grey[900]}`
+  },
+  miniCardinActive: {
+    border: 'none'
+  },
   miniMedia: {
     height: 108.5,
     objectFit: 'contain',
@@ -29,7 +35,6 @@ export const useStyles = makeStyles({
   button: {
     color: green['A200'],
     background: grey[900],
-    marginBottom: 20,
     textTransform: 'capitalize',
     marginTop: 20,
     '&:hover': {
@@ -40,5 +45,8 @@ export const useStyles = makeStyles({
   description: {
     marginTop: 20,
     marginBottom: 20
+  },
+  price: {
+    flexGrow: 0.5
   }
 });

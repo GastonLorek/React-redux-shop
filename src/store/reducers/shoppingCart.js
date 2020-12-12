@@ -37,7 +37,9 @@ const reducer = (state = intialState, action) => {
             quantity: state.quantity
           }
         ],
-        isOpen: !state.isOpen
+        isOpen: !state.isOpen,
+        quantity: 1,
+        counter: state.counter + state.quantity
       };
     case actionType.REMOVE_ITEM_FROM_CART:
       if (findItem(state.shoppingCart, action.item)) {
@@ -45,7 +47,23 @@ const reducer = (state = intialState, action) => {
           ...state,
           shoppingCart: state.shoppingCart.filter(
             product => product.id !== action.item.id
-          )
+          ),
+          counter: state.counter - action.item.quantity
+        };
+      }
+      return;
+    case actionType.HANDLE_QUANTITY:
+      console.log(action);
+      if (action.operator === '+') {
+        return {
+          ...state,
+          quantity: state.quantity + 1
+        };
+      }
+      if (action.operator === '-') {
+        return {
+          ...state,
+          quantity: state.quantity - 1
         };
       }
       return;

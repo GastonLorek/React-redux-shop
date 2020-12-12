@@ -10,11 +10,13 @@ import {
   CardMedia,
   Divider,
   List,
+  ListItem,
   ListItemText,
   Typography
 } from '@material-ui/core';
 import AddShoppingCartTwoToneIcon from '@material-ui/icons/AddShoppingCartTwoTone';
 import Currency from '../Currency/Currency';
+import Quantity from '../Quantity/Quantity';
 
 const ProductPage = () => {
   const [index, setIndex] = useState(0);
@@ -28,6 +30,14 @@ const ProductPage = () => {
   const matchProduct = () => products.find(item => item.id === parseInt(id));
 
   const { name, description, images, price } = matchProduct();
+
+  const active = i => {
+    const image = [
+      classes.miniCard,
+      index === i ? classes.miniCardactive : classes.miniCardinActive
+    ];
+    return image.join(' ');
+  };
   return (
     <div
       style={{ minHeight: '92vh', maxWidth: '1332px', margin: ' 20px auto' }}
@@ -49,7 +59,7 @@ const ProductPage = () => {
           <Grid item xs={2}>
             {images.map((image, idx) => (
               <Card
-                className={classes.miniCard}
+                className={active(idx)}
                 key={idx}
                 onMouseEnter={() => setIndex(idx)}
               >
@@ -76,19 +86,6 @@ const ProductPage = () => {
                     </Typography>
                   </>
                 }
-                secondary={
-                  <>
-                    <Typography
-                      component="strong"
-                      variant="h6"
-                      className={classes.inline}
-                      gutterBottom
-                      paragraph
-                    >
-                      <Currency price={price} />
-                    </Typography>
-                  </>
-                }
               />
               <Divider />
               <ListItemText
@@ -100,6 +97,17 @@ const ProductPage = () => {
                 }
               />
 
+              <Divider />
+              <ListItem disableGutters>
+                <Typography
+                  component="strong"
+                  variant="h6"
+                  className={classes.price}
+                >
+                  <Currency price={price} />
+                </Typography>
+                <Quantity />
+              </ListItem>
               <Divider />
               <Button
                 className={classes.button}
