@@ -11,6 +11,7 @@ import IconButton from '@material-ui/core/IconButton';
 import './Header.css';
 import ShoppingCartSharpIcon from '@material-ui/icons/ShoppingCartSharp';
 import { grey, green } from '@material-ui/core/colors';
+import { Badge } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
@@ -34,7 +35,7 @@ const useStyles = makeStyles({
 
 const Header = () => {
   const dispatch = useDispatch();
-  const isOpen = useSelector(state => state.shoppingCart.isOpen);
+  const { isOpen, counter } = useSelector(state => state.shoppingCart);
   const classes = useStyles();
   const history = useHistory();
   return (
@@ -52,10 +53,12 @@ const Header = () => {
             edge="start"
             className={classes.menuButton}
             color="inherit"
-            aria-label="menu"
+            aria-label="cart"
             onClick={() => dispatch(toogleCart({ isOpen }))}
           >
-            <ShoppingCartSharpIcon />
+            <Badge badgeContent={counter}>
+              <ShoppingCartSharpIcon />
+            </Badge>
           </IconButton>
         </Toolbar>
       </AppBar>
