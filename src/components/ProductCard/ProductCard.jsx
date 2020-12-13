@@ -8,15 +8,19 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import { Grid } from '@material-ui/core';
+import { CardActions, Grid } from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
     maxWidth: 300
   },
   media: {
-    height: 150,
+    height: 170,
     objectFit: 'contain'
+  },
+  content: {
+    height: 20,
+    padding: 5
   }
 });
 
@@ -43,23 +47,19 @@ const ProductCard = ({ product }) => {
                 image={image}
                 title="Nike Adversary"
               />
-              <CardContent>
-                <Typography gutterBottom variant="h6" component="h2">
-                  {name}
-                </Typography>
-                <Typography
-                  gutterBottom
-                  variant="body1"
-                  color="textSecondary"
-                  component="strong"
-                >
-                  $ {price}
-                </Typography>
-                <Typography variant="body2" color="textSecondary" component="p">
-                  {category}
-                </Typography>
-              </CardContent>
             </CardActionArea>
+            <CardContent className={classes.content}>
+              <Typography variant="p" display="block" component="strong">
+                {name}
+              </Typography>
+              <Typography
+                variant="body1"
+                color="textSecondary"
+                component="strong"
+              >
+                $ {price}
+              </Typography>
+            </CardContent>
           </Card>
         </Grid>
       )}
