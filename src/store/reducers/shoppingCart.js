@@ -67,6 +67,11 @@ const reducer = (state = intialState, action) => {
         };
       }
       return;
+    case actionType.RESET_QUANTITY:
+      return {
+        ...state,
+        quantity: 1
+      };
     default:
       return state;
   }

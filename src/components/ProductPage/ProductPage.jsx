@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { addToCart } from '../../store/actions/index';
+import { addToCart, resetQuantity } from '../../store/actions/index';
 import { useStyles } from './style';
 import Grid from '@material-ui/core/Grid';
 import {
@@ -15,6 +15,8 @@ import {
   Typography
 } from '@material-ui/core';
 import AddShoppingCartTwoToneIcon from '@material-ui/icons/AddShoppingCartTwoTone';
+import Breadcrumbs from '@material-ui/core/Breadcrumbs';
+import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import Currency from '../Currency/Currency';
 import Quantity from '../Quantity/Quantity';
 
@@ -22,7 +24,7 @@ const ProductPage = () => {
   const [index, setIndex] = useState(0);
   const {
     products,
-    shoppingCart: { isOpen }
+    shoppingCart: { isOpen, quantity }
   } = useSelector(state => state);
   const dispatch = useDispatch();
   const classes = useStyles();
@@ -40,7 +42,11 @@ const ProductPage = () => {
   };
   return (
     <div
-      style={{ minHeight: '92vh', maxWidth: '1332px', margin: ' 20px auto' }}
+      style={{
+        height: 'calc(100vh - 89px)',
+        maxWidth: '1332px',
+        margin: ' 20px auto'
+      }}
     >
       <Grid
         className={classes.root}
@@ -50,8 +56,38 @@ const ProductPage = () => {
         justify="center"
         alignItems="strech"
       >
-        <Grid container item xs={6}>
-          <h1>hi</h1>
+        <Grid
+          container
+          direction="row"
+          alignItems="center"
+          justify="space-between"
+          item
+          xs={12}
+          spacing={3}
+        >
+          <Typography
+            variant="h3"
+            gutterBottom={true}
+            className={classes.title}
+          >
+            {name.toLowerCase()}
+          </Typography>
+          <Breadcrumbs
+            separator={<NavigateNextIcon fontSize="small" />}
+            aria-label="breadcrumb"
+          >
+            <Link
+              to="/"
+              onClick={() => dispatch(resetQuantity(quantity))}
+              className={classes.link}
+            >
+              {/* <CloseIcon fontSize="large" /> */}
+              <p>Shop</p>
+            </Link>
+
+            {/* <CloseIcon fontSize="large" /> */}
+            <p>{name}</p>
+          </Breadcrumbs>
         </Grid>
       </Grid>
       <Card className={classes.produtctCard}>

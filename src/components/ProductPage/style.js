@@ -48,5 +48,13 @@ export const useStyles = makeStyles({
   },
   price: {
     flexGrow: 0.5
+  },
+  title: {
+    textTransform: 'capitalize'
+  },
+  link: {
+    textDecoration: 'none',
+    color: 'rgb(117 117 117)',
+    '& :hover': { textDecoration: 'underline' }
   }
 });

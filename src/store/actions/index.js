@@ -23,3 +23,9 @@ export const handleQuantity = operator => {
     operator
   };
 };
+export const resetQuantity = quantity => {
+  return {
+    type: actionTypes.RESET_QUANTITY,
+    quantity
+  };
+};
