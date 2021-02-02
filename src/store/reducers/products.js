@@ -122,6 +122,134 @@ const intialState = [
     price: 7500,
     category: 'shoes',
     brand: 'adidas'
+  },
+  {
+    id: 9,
+    name: 'MATCHBREAK SUPER',
+    image: require('../../images/Matchbreak_Super_Shoes_White_EG2740_01_standard.jpg'),
+    images: [
+      require('../../images/sb-charge-canvas-mens-skate-shoe-1.jpg'),
+      require('../../images/sb-charge-canvas-mens-skate-shoe-2.jpg'),
+      require('../../images/sb-charge-canvas-mens-skate-shoe-3.jpg'),
+      require('../../images/sb-charge-canvas-mens-skate-shoe-4.jpg')
+    ],
+    description:
+      'These shoes have earned their bragging rights. After all, they are the highest-quality Vulcanized footwear ever produced by adidas Skateboarding. Offering pinnacle comfort and performance, they are ready to help you earn bragging rights of your own.',
+    price: 7500,
+    category: 'shoes',
+    brand: 'adidas'
+  },
+  {
+    id: 10,
+    name: 'MATCHBREAK SUPER',
+    image: require('../../images/Matchbreak_Super_Shoes_White_EG2740_01_standard.jpg'),
+    images: [
+      require('../../images/sb-charge-canvas-mens-skate-shoe-1.jpg'),
+      require('../../images/sb-charge-canvas-mens-skate-shoe-2.jpg'),
+      require('../../images/sb-charge-canvas-mens-skate-shoe-3.jpg'),
+      require('../../images/sb-charge-canvas-mens-skate-shoe-4.jpg')
+    ],
+    description:
+      'These shoes have earned their bragging rights. After all, they are the highest-quality Vulcanized footwear ever produced by adidas Skateboarding. Offering pinnacle comfort and performance, they are ready to help you earn bragging rights of your own.',
+    price: 7500,
+    category: 'shoes',
+    brand: 'adidas'
+  },
+  {
+    id: 11,
+    name: 'MATCHBREAK SUPER',
+    image: require('../../images/Matchbreak_Super_Shoes_White_EG2740_01_standard.jpg'),
+    images: [
+      require('../../images/sb-charge-canvas-mens-skate-shoe-1.jpg'),
+      require('../../images/sb-charge-canvas-mens-skate-shoe-2.jpg'),
+      require('../../images/sb-charge-canvas-mens-skate-shoe-3.jpg'),
+      require('../../images/sb-charge-canvas-mens-skate-shoe-4.jpg')
+    ],
+    description:
+      'These shoes have earned their bragging rights. After all, they are the highest-quality Vulcanized footwear ever produced by adidas Skateboarding. Offering pinnacle comfort and performance, they are ready to help you earn bragging rights of your own.',
+    price: 7500,
+    category: 'shoes',
+    brand: 'adidas'
+  },
+  {
+    id: 12,
+    name: 'MATCHBREAK SUPER',
+    image: require('../../images/Matchbreak_Super_Shoes_White_EG2740_01_standard.jpg'),
+    images: [
+      require('../../images/sb-charge-canvas-mens-skate-shoe-1.jpg'),
+      require('../../images/sb-charge-canvas-mens-skate-shoe-2.jpg'),
+      require('../../images/sb-charge-canvas-mens-skate-shoe-3.jpg'),
+      require('../../images/sb-charge-canvas-mens-skate-shoe-4.jpg')
+    ],
+    description:
+      'These shoes have earned their bragging rights. After all, they are the highest-quality Vulcanized footwear ever produced by adidas Skateboarding. Offering pinnacle comfort and performance, they are ready to help you earn bragging rights of your own.',
+    price: 7500,
+    category: 'shoes',
+    brand: 'adidas'
+  },
+  {
+    id: 13,
+    name: 'MATCHBREAK SUPER',
+    image: require('../../images/Matchbreak_Super_Shoes_White_EG2740_01_standard.jpg'),
+    images: [
+      require('../../images/sb-charge-canvas-mens-skate-shoe-1.jpg'),
+      require('../../images/sb-charge-canvas-mens-skate-shoe-2.jpg'),
+      require('../../images/sb-charge-canvas-mens-skate-shoe-3.jpg'),
+      require('../../images/sb-charge-canvas-mens-skate-shoe-4.jpg')
+    ],
+    description:
+      'These shoes have earned their bragging rights. After all, they are the highest-quality Vulcanized footwear ever produced by adidas Skateboarding. Offering pinnacle comfort and performance, they are ready to help you earn bragging rights of your own.',
+    price: 7500,
+    category: 'shoes',
+    brand: 'adidas'
+  },
+  {
+    id: 14,
+    name: 'MATCHBREAK SUPER',
+    image: require('../../images/Matchbreak_Super_Shoes_White_EG2740_01_standard.jpg'),
+    images: [
+      require('../../images/sb-charge-canvas-mens-skate-shoe-1.jpg'),
+      require('../../images/sb-charge-canvas-mens-skate-shoe-2.jpg'),
+      require('../../images/sb-charge-canvas-mens-skate-shoe-3.jpg'),
+      require('../../images/sb-charge-canvas-mens-skate-shoe-4.jpg')
+    ],
+    description:
+      'These shoes have earned their bragging rights. After all, they are the highest-quality Vulcanized footwear ever produced by adidas Skateboarding. Offering pinnacle comfort and performance, they are ready to help you earn bragging rights of your own.',
+    price: 7500,
+    category: 'shoes',
+    brand: 'adidas'
+  },
+  {
+    id: 15,
+    name: 'MATCHBREAK SUPER',
+    image: require('../../images/Matchbreak_Super_Shoes_White_EG2740_01_standard.jpg'),
+    images: [
+      require('../../images/sb-charge-canvas-mens-skate-shoe-1.jpg'),
+      require('../../images/sb-charge-canvas-mens-skate-shoe-2.jpg'),
+      require('../../images/sb-charge-canvas-mens-skate-shoe-3.jpg'),
+      require('../../images/sb-charge-canvas-mens-skate-shoe-4.jpg')
+    ],
+    description:
+      'These shoes have earned their bragging rights. After all, they are the highest-quality Vulcanized footwear ever produced by adidas Skateboarding. Offering pinnacle comfort and performance, they are ready to help you earn bragging rights of your own.',
+    price: 7500,
+    category: 'shoes',
+    brand: 'adidas'
+  },
+  {
+    id: 16,
+    name: 'MATCHBREAK SUPER',
+    image: require('../../images/Matchbreak_Super_Shoes_White_EG2740_01_standard.jpg'),
+    images: [
+      require('../../images/sb-charge-canvas-mens-skate-shoe-1.jpg'),
+      require('../../images/sb-charge-canvas-mens-skate-shoe-2.jpg'),
+      require('../../images/sb-charge-canvas-mens-skate-shoe-3.jpg'),
+      require('../../images/sb-charge-canvas-mens-skate-shoe-4.jpg')
+    ],
+    description:
+      'These shoes have earned their bragging rights. After all, they are the highest-quality Vulcanized footwear ever produced by adidas Skateboarding. Offering pinnacle comfort and performance, they are ready to help you earn bragging rights of your own.',
+    price: 7500,
+    category: 'shoes',
+    brand: 'adidas'
   }
 ];
 

@@ -1,10 +1,12 @@
 import React from 'react';
+
 import { useSelector, useDispatch } from 'react-redux';
-import { makeStyles } from '@material-ui/core/styles';
-import Modal from '@material-ui/core/Modal';
-import Backdrop from '@material-ui/core/Backdrop';
+
 import Fade from '@material-ui/core/Fade';
+import Modal from '@material-ui/core/Modal';
 import { grey } from '@material-ui/core/colors';
+import Backdrop from '@material-ui/core/Backdrop';
+import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
   modal: {
@@ -27,7 +29,6 @@ const TransitionsModal = () => {
   const dispatch = useDispatch();
   const { isOpen, payment } = useSelector(state => state.modal);
   const classes = useStyles();
-  console.log(payment);
   return (
     <div>
       <Modal

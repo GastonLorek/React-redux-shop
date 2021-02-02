@@ -1,8 +1,6 @@
 import React from 'react';
-import './Header.css';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
 import { toogleCart } from '../../store/actions/index';
 
 import Badge from '@material-ui/core/Badge';
@@ -38,16 +36,11 @@ const Header = () => {
   const dispatch = useDispatch();
   const { isOpen, counter } = useSelector(state => state.shoppingCart);
   const classes = useStyles();
-  const history = useHistory();
   return (
     <div className={classes.root}>
       <AppBar position="relative" className={classes.bar}>
         <Toolbar className={classes.inside}>
-          <Typography
-            variant="h5"
-            className={classes.title}
-            onClick={() => history.push('/')}
-          >
+          <Typography variant="h5" className={classes.title}>
             React Shoes Store
           </Typography>
           <IconButton

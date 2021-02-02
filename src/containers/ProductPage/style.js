@@ -5,6 +5,11 @@ export const useStyles = makeStyles({
   root: {
     flexGrow: 1
   },
+  main: {
+    height: 'calc(100vh - 89px)',
+    maxWidth: '1332px',
+    margin: ' 20px auto'
+  },
   card: {
     maxWidth: 500
   },
