@@ -6,7 +6,7 @@ export const useStyles = makeStyles({
     flexGrow: 1
   },
   main: {
-    height: 'calc(100vh - 89px)',
+    height: 'calc(100vh - 96px)',
     maxWidth: '1332px',
     margin: ' 20px auto'
   },

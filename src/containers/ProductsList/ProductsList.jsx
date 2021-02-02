@@ -10,7 +10,7 @@ import ProductCard from '../../components/ProductCard/ProductCard';
 
 const useStyles = makeStyles(() => ({
   girdContainer: {
-    minHeight: 'calc(100vh - 64px)',
+    minHeight: 'calc(100vh - 96px)',
     maxWidth: '1332px',
     margin: '20px auto'
   },
