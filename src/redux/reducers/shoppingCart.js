@@ -1,4 +1,4 @@
-import * as actionType from '../actions/actionTypes';
+import * as actionType from '../CONSTANTS';
 
 const intialState = {
   shoppingCart: [],

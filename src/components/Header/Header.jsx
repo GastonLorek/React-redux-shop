@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { toogleCart } from '../../store/actions/index';
+import { toogleCart } from '../../redux/actions/index';
 
 import Badge from '@material-ui/core/Badge';
 import AppBar from '@material-ui/core/AppBar';

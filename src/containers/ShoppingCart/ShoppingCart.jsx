@@ -2,8 +2,8 @@ import React from 'react';
 
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getCartTotalAmount } from '../../store/reducers/shoppingCart';
-import { removeFromCart, toogleCart } from '../../store/actions/index';
+import { getCartTotalAmount } from '../../redux/reducers/shoppingCart';
+import { removeFromCart, toogleCart } from '../../redux/actions/index';
 
 import { useStyles } from './style';
 import List from '@material-ui/core/List';

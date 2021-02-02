@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { handleQuantity } from '../../store/actions/index';
+import { handleQuantity } from '../../redux/actions/index';
 import { IconButton, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { grey, green } from '@material-ui/core/colors';

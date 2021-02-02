@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { toogleModal } from '../../store/actions/modal';
+import { toogleModal } from '../../redux/actions/modal';
 import PaypalExpressBtn from 'react-paypal-express-checkout';
 
 const PaypalButton = ({ total }) => {

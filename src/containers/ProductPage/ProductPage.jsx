@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { addToCart, resetQuantity } from '../../store/actions/index';
+import { addToCart, resetQuantity } from '../../redux/actions/index';
 
 import { useStyles } from './style';
 import Grid from '@material-ui/core/Grid';

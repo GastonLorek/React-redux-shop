@@ -1,4 +1,4 @@
-import * as actionType from './actionTypes';
+import * as actionType from '../CONSTANTS';
 
 export const toogleModal = paylaod => {
   return {
