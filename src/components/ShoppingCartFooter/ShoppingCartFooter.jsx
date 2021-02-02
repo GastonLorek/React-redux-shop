@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-import Currency from '../../components/Currency/Currency';
-import PaypalBUtton from '../../components/PaypalButton/PaypalButton';
+import Currency from '../Currency/Currency';
+import PaypalBUtton from '../../containers/PaypalButton/PaypalButton';
 
 const ShoppingCartFooter = ({ onContinueShopping, classes, total }) => (
   <>
