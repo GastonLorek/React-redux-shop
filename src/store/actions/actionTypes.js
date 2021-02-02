@@ -5,3 +5,5 @@ export const ADD_ONE = 'ADD_ONE';
 export const REMOVE_ONE = 'REMOVE_ONE';
 export const HANDLE_QUANTITY = 'HANDLE_QUANTITY';
 export const RESET_QUANTITY = 'RESET_QUANTITY';
+export const CLEAR_CART = 'CLEAR_CART';
+export const TOOGLE_MODAL = 'TOOGLE_MODAL';

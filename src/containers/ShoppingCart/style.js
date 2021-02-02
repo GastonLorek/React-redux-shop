@@ -12,16 +12,30 @@ export const useStyles = makeStyles({
   fullList: {
     width: 'auto'
   },
+  shoppingCartFooter: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center'
+  },
   button: {
+    width: 350,
     height: 40,
     background: grey[900],
     color: green['A200'],
     borderRadius: 0,
     textTransform: 'capitalize',
+    marginBottom: 20,
     '&:hover': {
       background: green['A200'],
       color: grey[900]
     }
+  },
+  total: {
+    width: 350,
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 10
   },
   avatar: {
     width: 100,
@@ -32,7 +46,7 @@ export const useStyles = makeStyles({
     display: 'flex'
   },
   appBar: {
-    // height: 60,
+    width: 500,
     border: 'none',
     color: green['A200'],
     background: grey[900]

@@ -1,14 +1,16 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
+import { useHistory } from 'react-router-dom';
+
 import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardContent from '@material-ui/core/CardContent';
+import Grid from '@material-ui/core/Grid';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
+import CardContent from '@material-ui/core/CardContent';
+import CardActionArea from '@material-ui/core/CardActionArea';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import { CardActions, Grid } from '@material-ui/core';
+
+import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
   root: {
@@ -27,7 +29,7 @@ const useStyles = makeStyles({
 const ProductCard = ({ product }) => {
   const classes = useStyles();
   const history = useHistory();
-  const { name, image, price, category, id } = product;
+  const { name, image, price, id } = product;
   return (
     <>
       {!product ? (

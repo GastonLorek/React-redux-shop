@@ -72,6 +72,15 @@ const reducer = (state = intialState, action) => {
         ...state,
         quantity: 1
       };
+    case actionType.CLEAR_CART:
+      return {
+        ...state,
+        shoppingCart: [],
+        isOpen: false,
+        counter: 0,
+        quantity: 1,
+        total: 0
+      };
     default:
       return state;
   }

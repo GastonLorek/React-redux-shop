@@ -1,17 +1,18 @@
 import React from 'react';
+import './Header.css';
+
 import { useDispatch, useSelector } from 'react-redux';
-import { toogleCart } from '../../store/actions/index';
-import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
-import { makeStyles } from '@material-ui/core/styles';
+import { toogleCart } from '../../store/actions/index';
+
+import Badge from '@material-ui/core/Badge';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
-import './Header.css';
-import ShoppingCartSharpIcon from '@material-ui/icons/ShoppingCartSharp';
+import { makeStyles } from '@material-ui/core/styles';
 import { grey, green } from '@material-ui/core/colors';
-import { Badge } from '@material-ui/core';
+import ShoppingCartSharpIcon from '@material-ui/icons/ShoppingCartSharp';
 
 const useStyles = makeStyles({
   root: {
@@ -67,7 +68,3 @@ const Header = () => {
 };
 
 export default Header;
-
-Header.propTypes = {
-  handleShoppingCart: PropTypes.func
-};

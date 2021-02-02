@@ -29,3 +29,8 @@ export const resetQuantity = quantity => {
     quantity
   };
 };
+export const clearCart = () => {
+  return {
+    type: actionTypes.CLEAR_CART
+  };
+};
