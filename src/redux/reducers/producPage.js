@@ -1,7 +1,7 @@
 import * as actionType from '../CONSTANTS';
 
 const intialState = {
-  products: [],
+  product: {},
   isLoading: false,
   isError: false,
   errorMessage: ''
@@ -9,19 +9,19 @@ const intialState = {
 
 const reducer = (state = intialState, action) => {
   switch (action.type) {
-    case actionType.FETCH_PRODUCTS_REQUESTED:
+    case actionType.FETCH_PRODUCT_REQUESTED:
       return {
         ...state,
         isLoading: true
       };
-    case actionType.FETCH_PRODUCTS_SUCCEDED:
+    case actionType.FETCH_PRODUCT_SUCCEDED:
       console.log(action);
       return {
         ...state,
-        products: action.products,
-        isLoading: false
+        isLoading: false,
+        product: action.product
       };
-    case actionType.FETCH_PRODUCTS_FAILED:
+    case actionType.FETCH_PRODUCT_FAILED:
       return {
         ...state,
         isLoading: false,

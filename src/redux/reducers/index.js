@@ -1,12 +1,14 @@
 import { combineReducers } from 'redux';
-import products from './products';
-import shoppingCart from './shoppingCart';
 import modal from './modal';
+import products from './products';
+import productPage from './producPage';
+import shoppingCart from './shoppingCart';
 
 const rootReducer = combineReducers({
   products,
   shoppingCart,
-  modal
+  modal,
+  productPage
 });
 
 export default rootReducer;

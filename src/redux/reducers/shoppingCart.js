@@ -8,7 +8,7 @@ const intialState = {
   total: 0
 };
 
-const findItem = (cart, product) => cart.find(item => item.id === product.id);
+const findItem = (cart, product) => cart.find(item => item._id === product._id);
 export const getCartTotalAmount = shoppingCart =>
   shoppingCart?.reduce(
     (amount, item) => item.price * item.quantity + amount,
@@ -23,6 +23,7 @@ const reducer = (state = intialState, action) => {
         isOpen: !state.isOpen
       };
     case actionType.ADD_TO_CART:
+      console.log(action);
       if (findItem(state.shoppingCart, action.item)) {
         return {
           ...state
@@ -46,7 +47,7 @@ const reducer = (state = intialState, action) => {
         return {
           ...state,
           shoppingCart: state.shoppingCart.filter(
-            product => product.id !== action.item.id
+            product => product._id !== action.item._id
           ),
           counter: state.counter - action.item.quantity
         };
