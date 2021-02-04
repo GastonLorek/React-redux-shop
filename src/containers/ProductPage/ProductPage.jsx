@@ -11,6 +11,7 @@ import { Card, CardMedia } from '@material-ui/core';
 import ProductPageGallery from '../../components/ProductPageGallery/ProductPageGallery';
 import ProductPageDetails from '../../components/ProductPageDettails/ProductPageDetails';
 import ProductPageHeader from '../../components/ProductPageHeader/ProductPageHeader';
+import Loading from '../../components/Loading/Loading';
 
 import { fetchProduct } from '../../redux/actions/productPage';
 
@@ -50,9 +51,7 @@ const ProductPage = () => {
     <div className={classes.main}>
       {isError && <h1>{errorMessage}</h1>}
       {isLoading ? (
-        <div style={{ justifySelf: 'center', color: 'red' }}>
-          <h1>Loading...</h1>
-        </div>
+        <Loading />
       ) : (
         <>
           <Grid

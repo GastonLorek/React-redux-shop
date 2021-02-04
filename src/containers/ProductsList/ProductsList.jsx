@@ -9,6 +9,7 @@ import TransitionsModal from '../../components/Modal/Modal';
 import ProductCard from '../../components/ProductCard/ProductCard';
 
 import { fetchProducts } from '../../redux/actions/products';
+import Loading from '../../components/Loading/Loading';
 const useStyles = makeStyles(() => ({
   girdContainer: {
     minHeight: 'calc(100vh - 96px)',
@@ -69,7 +70,7 @@ const ProductsList = () => {
   return (
     <div className={classes.girdContainer}>
       {isLoading ? (
-        <h1>Loading....</h1>
+        <Loading />
       ) : (
         <Grid container item sm={12} spacing={2} className={classes.grid}>
           {renderProducts}

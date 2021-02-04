@@ -21,7 +21,7 @@ const fetchProductFail = err => {
 
 export const fetchProducts = () => {
   return async dispatch => {
-    dispatch(fetchProductRequest);
+    dispatch(fetchProductRequest());
     try {
       const response = await axios.get(
         'https://storenodejsapi.herokuapp.com/api/v1/getProducts'

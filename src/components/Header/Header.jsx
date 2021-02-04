@@ -6,7 +6,6 @@ import { toogleCart } from '../../redux/actions/index';
 import Badge from '@material-ui/core/Badge';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import { makeStyles } from '@material-ui/core/styles';
 import { grey, green } from '@material-ui/core/colors';
@@ -17,7 +16,10 @@ const useStyles = makeStyles({
     flexGrow: 1
   },
   title: {
-    flexGrow: 1
+    flexGrow: 1,
+    fontFamily: 'Dancing Script',
+    fontSize: 35,
+    fontWeigth: 500
   },
   bar: {
     background: grey[900]
@@ -40,9 +42,7 @@ const Header = () => {
     <div className={classes.root}>
       <AppBar position="relative" className={classes.bar}>
         <Toolbar className={classes.inside}>
-          <Typography variant="h5" className={classes.title}>
-            React Shoes Store
-          </Typography>
+          <h5 className={classes.title}>React Shoes Store</h5>
           <IconButton
             edge="start"
             className={classes.menuButton}
