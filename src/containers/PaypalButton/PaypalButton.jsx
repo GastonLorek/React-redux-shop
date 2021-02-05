@@ -28,8 +28,7 @@ const PaypalButton = ({ total }) => {
   let currency = 'USD';
 
   const client = {
-    sandbox: process.env.REACT_APP_PAYPAL_CLIENT_ID,
-    production: 'YOUR-PRODUCTION-APP-ID'
+    sandbox: process.env.REACT_APP_PAYPAL_CLIENT_ID
   };
 
   return (
